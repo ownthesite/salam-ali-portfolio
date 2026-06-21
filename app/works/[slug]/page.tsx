@@ -56,16 +56,34 @@ export default async function ProjectPage({
           className="mx-auto mt-8 max-w-[1600px] px-6 md:px-10"
         >
           <div className="relative aspect-[16/9] w-full overflow-hidden bg-secondary">
-            <Image
-              src={project.image || '/placeholder.svg'}
-              alt={project.title}
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-            />
+            {project.id ? (() => {
+              // 🟢 Automatically extracts just the digits (e.g. 164562375) 
+              // even if the database has a full link or extra query symbols.
+              const cleanNumericId = String(project.id).match(/\d+/)?.at(0) || "";
+
+              return (
+                <iframe
+                  title={project.title || "vimeo-player"}
+                  src={`https://player.vimeo.com/video/${project.id}`}
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  className="absolute inset-0 h-full w-full border-0 object-cover"
+                />
+              );
+            })() : (
+              <Image
+                src={project.image || '/placeholder.svg'}
+                alt={project.title}
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover"
+              />
+            )}
           </div>
         </FadeIn>
+
 
         <div className="mx-auto mt-12 max-w-[1600px] px-6 md:px-10">
           <div className="grid grid-cols-1 gap-12 border-t border-border pt-12 lg:grid-cols-12">
