@@ -22,6 +22,7 @@ export type Project = {
   year: string
   client: string
   image: string
+  id: string
   /** layout span hints for the editorial masonry grid */
   span: 'wide' | 'tall' | 'large' | 'standard'
   description: string
@@ -36,6 +37,7 @@ export const projects: Project[] = [
     year: '2024',
     client: 'Hermès',
     image: '/works/hermes-commercial.png',
+    id: '76979871?h=8272103f6e', 
     span: 'large',
     description:
       'A cinematic short-form film exploring motion and stillness across a vast desert plain. Shot at golden hour with anamorphic lenses to capture the weightless choreography of light and figure.',
@@ -53,6 +55,7 @@ export const projects: Project[] = [
     year: '2024',
     client: 'Editorial',
     image: '/works/dancer-field.png',
+    id: "76979871?h=8272103f6e",
     span: 'tall',
     description:
       'A monochrome fashion series capturing the grace of contemporary dance against raw natural landscapes. An exercise in form, negative space and the tension of a single frozen gesture.',
@@ -69,6 +72,7 @@ export const projects: Project[] = [
     year: '2023',
     client: 'AERA',
     image: '/works/portrait-hands.png',
+    id: '',
     span: 'tall',
     description:
       'An intimate portrait-led campaign exploring vulnerability and presence. High-contrast lighting and restrained composition place the subject at the centre of an emotional narrative.',
@@ -85,6 +89,7 @@ export const projects: Project[] = [
     year: '2023',
     client: 'Meridian Group',
     image: '/works/corporate-office.png',
+    id: '',
     span: 'standard',
     description:
       'A corporate brand film reframing the workplace as architecture and rhythm. Symmetrical framing and clinical light bring an editorial sensibility to a commercial brief.',
@@ -101,6 +106,7 @@ export const projects: Project[] = [
     year: '2024',
     client: 'FORM Studio',
     image: '/works/dance-collective.png',
+    id: '',
     span: 'wide',
     description:
       'A social-first content series built around community and contemporary movement. Designed for short-form delivery while retaining a cinematic, editorial finish.',
@@ -117,6 +123,7 @@ export const projects: Project[] = [
     year: '2024',
     client: 'Maison Lumière',
     image: '/works/fashion-editorial.png',
+    id: '',
     span: 'tall',
     description:
       'A sculptural fashion editorial shot in studio with a restrained neutral palette. Soft directional light sculpts garment and form across a sequence of considered frames.',
@@ -133,6 +140,7 @@ export const projects: Project[] = [
     year: '2023',
     client: 'Noctis Parfums',
     image: '/works/brand-campaign.png',
+    id: '',
     span: 'standard',
     description:
       'A luxury fragrance campaign built on mist, glass and a single beam of light. A study in product cinematography where mood carries the story.',
@@ -149,6 +157,7 @@ export const projects: Project[] = [
     year: '2024',
     client: 'Urban Co.',
     image: '/works/social-reel.png',
+    id: '',
     span: 'standard',
     description:
       'A fast-cut short-form reel capturing the energy of the city in motion. Handheld camera, lens flares and natural light translate a lifestyle brand into rhythm.',
