@@ -55,7 +55,7 @@ export default async function ProjectPage({
           y={16}
           className="mx-auto mt-8 max-w-[1600px] px-6 md:px-10"
         >
-          <div className="relative aspect-[16/9] w-full overflow-hidden bg-secondary">
+          <div className="relative aspect-[16/9] w-full overflow-hidden bg-secondary rounded-2xl bg-black shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
             {project.id ? (() => {
               // 🟢 Automatically extracts just the digits (e.g. 164562375) 
               // even if the database has a full link or extra query symbols.
@@ -64,7 +64,7 @@ export default async function ProjectPage({
               return (
                 <iframe
                   title={project.title || "vimeo-player"}
-                  src={`https://player.vimeo.com/video/${project.id}`}
+                  src={`https://player.vimeo.com/video/${project.id}?controls=1&badge=0&autopause=0 &player_id=0&app_id=58479&title=0&byline=0&portrait=0&autoplay=1&mute=1`}
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   allowFullScreen
                   referrerPolicy="strict-origin-when-cross-origin"

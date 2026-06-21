@@ -55,7 +55,7 @@ export const projects: Project[] = [
     year: '2024',
     client: 'Editorial',
     image: '/works/dancer-field.png',
-    id: "76979871?h=8272103f6e",
+    id: "1189998581",
     span: 'tall',
     description:
       'A monochrome fashion series capturing the grace of contemporary dance against raw natural landscapes. An exercise in form, negative space and the tension of a single frozen gesture.',
