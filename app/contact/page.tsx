@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 const details = [
   { label: 'Email', value: 'salmanalimohammed608@gmail.com', href: 'mailto:salmanalimohammed608@gmail.com' },
   { label: 'Phone — UAE', value: '+971 54 768 9717', href: 'tel:+971547689717' },
-  { label: 'Phone — India', value: '+91 9946 176 466', href: 'tel:+919946176466' },
-  { label: 'Location', value: 'United Arab Emirates / India' },
+
+  { label: 'Location', value: 'United Arab Emirates' },
 ]
 
 const socials = [
@@ -88,8 +88,9 @@ export default function ContactPage() {
             </FadeIn>
           </div>
         </div>
-        <SiteFooter />
+
       </main>
+        <SiteFooter />
     </>
   )
 }
