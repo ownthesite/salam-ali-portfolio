@@ -46,7 +46,7 @@ export function SiteFooter() {
             </a>
           </div>
           <p className="md:text-right">
-            United Arab Emirates / India
+            United Arab Emirates
             <br />
             <span className="text-foreground/70">
               salmanalimohammed608@gmail.com
