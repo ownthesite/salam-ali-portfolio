@@ -8,6 +8,7 @@ import { SiteNav } from '@/components/site-nav'
 import { SiteFooter } from '@/components/site-footer'
 import { ProjectTile } from '@/components/project-tile'
 import { FadeIn } from '@/components/fade-in'
+import VideoPlayer from "./VideoPlayer";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }))
@@ -55,33 +56,8 @@ export default async function ProjectPage({
           y={16}
           className="mx-auto mt-8 max-w-[1600px] px-6 md:px-10"
         >
-          <div className="relative aspect-[16/9] w-full overflow-hidden bg-secondary rounded-2xl bg-black shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
-            {project.id ? (() => {
-              // 🟢 Automatically extracts just the digits (e.g. 164562375) 
-              // even if the database has a full link or extra query symbols.
-              const cleanNumericId = String(project.id).match(/\d+/)?.at(0) || "";
+          <VideoPlayer project={project} />
 
-              return (
-                <iframe
-                  title={project.title || "vimeo-player"}
-                  src={`https://player.vimeo.com/video/${project.id}?controls=1&badge=0&autopause=0 &player_id=0&app_id=58479&title=0&byline=0&portrait=0&autoplay=1&mute=1`}
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                  allowFullScreen
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  className="absolute inset-0 h-full w-full border-0 object-cover"
-                />
-              );
-            })() : (
-              <Image
-                src={project.image || '/placeholder.svg'}
-                alt={project.title}
-                fill
-                priority
-                sizes="100vw"
-                className="object-cover"
-              />
-            )}
-          </div>
         </FadeIn>
 
 
@@ -99,39 +75,7 @@ export default async function ProjectPage({
               </p>
             </div>
 
-            <div className="lg:col-span-5 lg:pl-8">
-              <dl className="flex flex-col gap-5">
-                <div className="flex justify-between border-b border-border pb-4">
-                  <dt className="font-heading text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                    Client
-                  </dt>
-                  <dd className="font-heading text-sm uppercase tracking-[0.08em] text-foreground">
-                    {project.client}
-                  </dd>
-                </div>
-                <div className="flex justify-between border-b border-border pb-4">
-                  <dt className="font-heading text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                    Year
-                  </dt>
-                  <dd className="font-heading text-sm uppercase tracking-[0.08em] text-foreground">
-                    {project.year}
-                  </dd>
-                </div>
-                {project.credits.map((credit) => (
-                  <div
-                    key={credit.role + credit.name}
-                    className="flex justify-between border-b border-border pb-4"
-                  >
-                    <dt className="font-heading text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                      {credit.role}
-                    </dt>
-                    <dd className="font-heading text-sm uppercase tracking-[0.08em] text-foreground">
-                      {credit.name}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
+
           </div>
         </div>
 
