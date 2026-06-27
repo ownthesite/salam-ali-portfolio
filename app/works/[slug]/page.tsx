@@ -74,7 +74,14 @@ export default async function ProjectPage({
                 {project.description}
               </p>
             </div>
-
+            <div className="flex justify-between border-b border-border pb-4">
+              <dt className="font-heading text-s uppercase tracking-[0.16em] text-muted-foreground">
+                Client
+              </dt>
+              <dd className="font-heading text-sm uppercase tracking-[0.08em] ms-4 text-foreground">
+                {project.client}
+              </dd>
+            </div>
 
           </div>
         </div>
