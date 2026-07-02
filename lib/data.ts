@@ -31,25 +31,25 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: 'hermes',
-    title: 'Hermès',
-    category: 'Commercial Advertisements',
+    title: 'creative reel ',
+    category: 'creative advertisment',
     client: 'Hermès',
-    image: '/works/hermes-commercial.png',
-    id: 'xIywP1K02iU', 
+    image: '/works/abpizza.png',
+    id: 'yGKDGx7ih9A', 
     span: 'large',
     description:
       'A cinematic short-form film exploring motion and stillness across a vast desert plain. Shot at golden hour with anamorphic lenses to capture the weightless choreography of light and figure.',
   },
   {
     slug: 'movement',
-    title: 'Movement Study',
-    category: 'Fashion Photography',
+    title: 'Agency Showreel',
+    category: 'Agency Advertisment',
     client: 'Editorial',
-    image: '/works/dancer-field.png',
-    id: "1189998581",
+    image: '/works/agency.png',
+    id: "UF0er5qIExc",
     span: 'tall',
     description:
-      'A monochrome fashion series capturing the grace of contemporary dance against raw natural landscapes. An exercise in form, negative space and the tension of a single frozen gesture.',
+      'This footage for this project was provided by the company, along with a creative brief and script from creative direciton. Using Adobe After Effects and Adobe Premier Pro. I developed the edit in my own style, creating the motion graphics,pacing,transitions and overall visual storytelling to bring the concept to life.',
   },
   {
     slug: 'silence',
