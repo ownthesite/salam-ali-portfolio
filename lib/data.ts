@@ -1,14 +1,14 @@
 export type Category =
-  | 'Commercial Advertisements'
-  | 'Social Media Content'
+  | 'Creative Advertisments'
+  | 'Agency Advertisments'
   | 'Reels & Short-form Videos'
   | 'Fashion Photography'
   | 'Brand Campaigns'
   | 'Corporate Videos'
 
 export const categories: Category[] = [
-  'Commercial Advertisements',
-  'Social Media Content',
+  'Creative Advertisments',
+  'Agency Advertisments',
   'Reels & Short-form Videos',
   'Fashion Photography',
   'Brand Campaigns',
@@ -32,7 +32,8 @@ export const projects: Project[] = [
   {
     slug: 'hermes',
     title: 'creative reel ',
-    category: 'creative advertisment',
+    category: 'Creative Advertisments',
+    category: 'Creative Advertisments',
     client: 'Hermès',
     image: '/works/abpizza.png',
     id: 'yGKDGx7ih9A', 
@@ -43,7 +44,7 @@ export const projects: Project[] = [
   {
     slug: 'movement',
     title: 'Agency Showreel',
-    category: 'Agency Advertisment',
+    category: 'Agency Advertisments',
     client: 'Editorial',
     image: '/works/agency.png',
     id: "UF0er5qIExc",
@@ -52,7 +53,7 @@ export const projects: Project[] = [
       'This footage for this project was provided by the company, along with a creative brief and script from creative direciton. Using Adobe After Effects and Adobe Premier Pro. I developed the edit in my own style, creating the motion graphics,pacing,transitions and overall visual storytelling to bring the concept to life.',
   },
   {
-    slug: 'silence',
+    slug: '',
     title: 'Silence',
     category: 'Brand Campaigns',
     client: 'AERA',
@@ -63,7 +64,7 @@ export const projects: Project[] = [
       'An intimate portrait-led campaign exploring vulnerability and presence. High-contrast lighting and restrained composition place the subject at the centre of an emotional narrative.',
   },
   {
-    slug: 'protocol',
+    slug: '',
     title: 'Protocol',
     category: 'Corporate Videos',
     client: 'Meridian Group',
@@ -74,7 +75,7 @@ export const projects: Project[] = [
       'A corporate brand film reframing the workplace as architecture and rhythm. Symmetrical framing and clinical light bring an editorial sensibility to a commercial brief.',
   },
   {
-    slug: 'collective',
+    slug: '',
     title: 'Collective',
     category: 'Social Media Content',
     client: 'FORM Studio',
@@ -85,7 +86,7 @@ export const projects: Project[] = [
       'A social-first content series built around community and contemporary movement. Designed for short-form delivery while retaining a cinematic, editorial finish.',
   },
   {
-    slug: 'atelier',
+    slug: '',
     title: 'Atelier',
     category: 'Fashion Photography',
     client: 'Maison Lumière',
@@ -96,7 +97,7 @@ export const projects: Project[] = [
       'A sculptural fashion editorial shot in studio with a restrained neutral palette. Soft directional light sculpts garment and form across a sequence of considered frames.',
   },
   {
-    slug: 'aura',
+    slug: '',
     title: 'Aura',
     category: 'Brand Campaigns',
     client: 'Noctis Parfums',
@@ -107,7 +108,7 @@ export const projects: Project[] = [
       'A luxury fragrance campaign built on mist, glass and a single beam of light. A study in product cinematography where mood carries the story.',
   },
   {
-    slug: 'transit',
+    slug: '',
     title: 'Transit',
     category: 'Reels & Short-form Videos',
     client: 'Urban Co.',
