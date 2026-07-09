@@ -33,12 +33,20 @@ export function WorksGrid() {
         ))}
       </div>
 
-      <motion.div layout className="grid grid-cols-1 gap-x-5 gap-y-12 md:grid-cols-2">
+      {/* Changed grid layout to CSS Columns layout */}
+      <motion.div
+        layout
+        className="columns-1 gap-x-5 md:columns-2"
+      >
         <AnimatePresence mode="popLayout">
           {filtered.map((project, i) => (
             <motion.div
-              key={project.slug}
+              // Combined key eliminates the unique key warning
+              key={`${project.slug}-${i}`}
               layout
+              // break-inside-avoid prevents layout splitting mid-card
+              // mb-12 acts as your gap-y-12 replacement
+              className="mb-12 break-inside-avoid"
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
