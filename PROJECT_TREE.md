@@ -13,6 +13,7 @@ salam-ali-portfolio
 │   │   └── page.tsx
 │   └── works
 │       ├── [slug]
+│       │   ├── VideoPlayer.tsx
 │       │   └── page.tsx
 │       └── page.tsx
 ├── components

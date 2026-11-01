@@ -43,7 +43,7 @@ export default function AboutPage() {
 
             <FadeIn delay={0.1} className="lg:col-span-7 lg:pt-6">
               <p className="font-heading text-sm uppercase tracking-[0.2em] text-muted-foreground">
-                Content Creator • Cinematographer • Director
+                Content Creator • Cinematographer • Video Editor
               </p>
               <h1 className="mt-4 font-heading text-5xl font-light uppercase leading-[1] tracking-[0.02em] text-foreground md:text-7xl">
                 Salman Ali

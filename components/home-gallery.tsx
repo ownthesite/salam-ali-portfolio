@@ -1,3 +1,4 @@
+
 'use client'
 
 import Image from 'next/image'
@@ -40,7 +41,8 @@ function Tile({
       className={className}
     >
       <Link href={`/works/${project.slug}`} className="group block h-full">
-        <div className="relative h-full w-full overflow-hidden bg-secondary">
+        <div className="relative h-full w-full overflow-hidden bg-[#333333]">
+
           <Image
             src={project.image || '/placeholder.svg'}
             alt={project.title}
@@ -49,21 +51,29 @@ function Tile({
             priority={priority}
             className="object-cover transition-transform duration-[1.4s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
           />
+
+          {/* Dark gradient overlay */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10 opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
+
           {showLabelOverlay && (
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="font-heading text-2xl font-light uppercase tracking-[0.35em] text-white/90 drop-shadow-sm md:text-3xl">
+              <span className="font-heading text-2xl font-light uppercase tracking-[0.35em] text-white drop-shadow-lg md:text-3xl">
                 {project.title}
               </span>
             </div>
           )}
+
+          {/* Hover project information */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between p-5 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-            <span className="font-heading text-sm font-medium uppercase tracking-[0.16em] text-white">
+            <span className="font-heading text-sm font-medium uppercase tracking-[0.16em] text-white drop-shadow-md">
               {project.title}
             </span>
-            <span className="font-heading text-xs uppercase tracking-[0.14em] text-white/80">
+
+            <span className="font-heading text-xs uppercase tracking-[0.14em] text-white/90 drop-shadow-md">
               {project.category}
             </span>
           </div>
+
         </div>
       </Link>
     </motion.div>
@@ -73,6 +83,7 @@ function Tile({
 export function HomeGallery() {
   return (
     <div className="mx-auto max-w-[1600px] px-6 md:px-10">
+
       {/* Above the fold: large feature + two stacked blocks */}
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-12">
         <div className="lg:col-span-8">
@@ -85,6 +96,7 @@ export function HomeGallery() {
             className="aspect-[16/10] lg:aspect-[16/11]"
           />
         </div>
+
         <div className="grid grid-cols-1 gap-5 lg:col-span-4">
           <Tile
             slug="movement"
@@ -92,6 +104,7 @@ export function HomeGallery() {
             sizes="(max-width: 1024px) 100vw, 33vw"
             className="aspect-[4/3] lg:aspect-auto"
           />
+
           <Tile
             slug="silence"
             index={2}
@@ -109,6 +122,7 @@ export function HomeGallery() {
           sizes="(max-width: 768px) 100vw, 50vw"
           className="aspect-[4/3]"
         />
+
         <Tile
           slug="collective"
           index={4}
@@ -125,6 +139,7 @@ export function HomeGallery() {
           sizes="(max-width: 1024px) 100vw, 33vw"
           className="aspect-[3/4] lg:col-span-4"
         />
+
         <Tile
           slug="aura"
           index={6}
@@ -132,6 +147,7 @@ export function HomeGallery() {
           className="aspect-[16/10] lg:col-span-8 lg:aspect-auto"
         />
       </div>
+
     </div>
   )
 }

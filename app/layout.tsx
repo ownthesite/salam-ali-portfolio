@@ -1,3 +1,4 @@
+
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Barlow_Condensed, Inter } from 'next/font/google'
@@ -38,8 +39,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light',
-  themeColor: '#ffffff',
+  colorScheme: 'dark',
+  themeColor: '#252525',
 }
 
 export default function RootLayout({

@@ -1,17 +1,11 @@
 export type Category =
   | 'Creative Advertisments'
-  | 'Agency Advertisments'
-  | 'Reels & Short-form Videos'
-  | 'Fashion Photography'
-  | 'Brand Campaigns'
+  | 'Social & Short-form Videos'
   | 'Corporate Videos'
 
 export const categories: Category[] = [
   'Creative Advertisments',
-  'Agency Advertisments',
-  'Reels & Short-form Videos',
-  'Fashion Photography',
-  'Brand Campaigns',
+  'Social & Short-form Videos',
   'Corporate Videos',
 ]
 
@@ -25,17 +19,16 @@ export type Project = {
   /** layout span hints for the editorial masonry grid */
   span: 'wide' | 'tall' | 'large' | 'standard'
   description: string
-  
 }
 
 export const projects: Project[] = [
   {
     slug: 'hermes',
-    title: 'creative reel ',
+    title: 'Creative Reel',
     category: 'Creative Advertisments',
     client: 'Hermès',
     image: '/works/abpizza.png',
-    id: 'yGKDGx7ih9A', 
+    id: 'yGKDGx7ih9A',
     span: 'tall',
     description:
       'A cinematic short-form film exploring motion and stillness across a vast desert plain. Shot at golden hour with anamorphic lenses to capture the weightless choreography of light and figure.',
@@ -43,7 +36,7 @@ export const projects: Project[] = [
   {
     slug: 'Promotion',
     title: 'Al Quoz: Dubai’s Underground Creative Hub',
-    category: 'Reels & Short-form Videos',
+    category: 'Social & Short-form Videos',
     client: 'Cultural Showcase',
     image: '/works/portrait-hands.png',
     id: 'Wh-V2iVQc6w',
@@ -54,18 +47,18 @@ export const projects: Project[] = [
   {
     slug: 'movement',
     title: 'Agency Showreel',
-    category: 'Agency Advertisments',
+    category: 'Corporate Videos',
     client: 'Editorial',
     image: '/works/agency.png',
-    id: "UF0er5qIExc",
+    id: 'UF0er5qIExc',
     span: 'wide',
     description:
-      'This footage for this project was provided by the company, along with a creative brief and script from creative direciton. Using Adobe After Effects and Adobe Premier Pro. I developed the edit in my own style, creating the motion graphics,pacing,transitions and overall visual storytelling to bring the concept to life.',
+      'This footage was provided by the company, along with a creative brief and script from the creative direction team. Using Adobe After Effects and Adobe Premiere Pro, I developed the edit in my own style, creating motion graphics, pacing, transitions, and overall visual storytelling to bring the concept to life.',
   },
   {
     slug: 'Commerical',
     title: 'Social Commerce Reel',
-    category: 'Reels & Short-form Videos',
+    category: 'Social & Short-form Videos',
     client: 'Splash',
     image: '/works/corporate-office.png',
     id: '9Mpe2dAqvGo',
@@ -82,7 +75,9 @@ export function getProject(slug: string) {
 export function getRelated(slug: string, category: Category) {
   return projects
     .filter((p) => p.slug !== slug && p.category === category)
-    .concat(projects.filter((p) => p.slug !== slug && p.category !== category))
+    .concat(
+      projects.filter((p) => p.slug !== slug && p.category !== category)
+    )
     .slice(0, 3)
 }
 
