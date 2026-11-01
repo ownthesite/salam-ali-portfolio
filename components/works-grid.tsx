@@ -1,3 +1,4 @@
+
 'use client'
 
 import { useState } from 'react'
@@ -19,6 +20,8 @@ export function WorksGrid() {
 
   return (
     <div className="mx-auto max-w-[1600px] px-6 md:px-10">
+
+      {/* Category filters */}
       <div className="mb-12 flex flex-wrap gap-x-7 gap-y-3 border-b border-border pb-8">
         {filters.map((f) => (
           <button
@@ -26,14 +29,14 @@ export function WorksGrid() {
             type="button"
             onClick={() => setFilter(f)}
             data-active={filter === f}
-            className="nav-link font-heading text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors data-[active=true]:text-foreground hover:text-foreground"
+            className="nav-link font-heading text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground data-[active=true]:text-foreground"
           >
             {f}
           </button>
         ))}
       </div>
 
-      {/* Changed grid layout to CSS Columns layout */}
+      {/* Projects grid */}
       <motion.div
         layout
         className="columns-1 gap-x-5 md:columns-2"
@@ -41,22 +44,32 @@ export function WorksGrid() {
         <AnimatePresence mode="popLayout">
           {filtered.map((project, i) => (
             <motion.div
-              // Combined key eliminates the unique key warning
               key={`${project.slug}-${i}`}
               layout
-              // break-inside-avoid prevents layout splitting mid-card
-              // mb-12 acts as your gap-y-12 replacement
               className="mb-12 break-inside-avoid"
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
               <ProjectTile project={project} index={i} />
             </motion.div>
           ))}
         </AnimatePresence>
       </motion.div>
+
+      {/* Empty state */}
+      {filtered.length === 0 && (
+        <div className="py-24 text-center">
+          <p className="font-heading text-xl uppercase tracking-widest text-muted-foreground">
+            No projects found
+          </p>
+        </div>
+      )}
+
     </div>
   )
 }

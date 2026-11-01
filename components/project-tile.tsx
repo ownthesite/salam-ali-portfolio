@@ -1,3 +1,4 @@
+
 'use client'
 
 import Image from 'next/image'
@@ -34,7 +35,7 @@ export function ProjectTile({
     >
       <Link href={`/works/${project.slug}`} className="group block">
         <div
-          className={`relative w-full overflow-hidden bg-secondary ${aspectMap[project.span]}`}
+          className={`relative w-full overflow-hidden bg-[#333333] ${aspectMap[project.span]}`}
         >
           <Image
             src={project.image || '/placeholder.svg'}
@@ -44,16 +45,24 @@ export function ProjectTile({
             priority={priority}
             className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
           />
+
+          {/* Image hover overlay */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
         </div>
+
         <div className="mt-4 flex items-baseline justify-between gap-4">
-          <h3 className="font-heading text-lg font-medium uppercase tracking-[0.08em] text-foreground">
+          <h3 className="font-heading text-lg font-medium uppercase tracking-[0.08em] text-foreground transition-colors group-hover:text-white">
             {project.title}
           </h3>
+
           <span className="font-heading text-xs uppercase tracking-[0.14em] text-muted-foreground">
             {project.year}
           </span>
         </div>
-        <p className="mt-1 text-sm text-muted-foreground">{project.category}</p>
+
+        <p className="mt-1 text-sm text-muted-foreground">
+          {project.category}
+        </p>
       </Link>
     </motion.div>
   )
